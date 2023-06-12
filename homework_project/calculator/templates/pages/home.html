@@ -1,0 +1,42 @@
+{% extends 'pages/base.html' %}
+{% block content%}
+<div class="container">
+    <h1 class="mt-3 mb-5">Calculator</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="mb-3 row">
+            <label for="inputnumber_one" class="col-sm-2 col-form-label">First Number: </label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control-sm" id="inputnumber_one" name="first_number" required>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <label for="inputnumber_two" class="col-sm-2 col-form-label">Second Number: </label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control-sm" id="inputnumber_two" name="second_number" required>
+            </div>
+        </div>
+        <div class="mb-3 row">
+            <div class="col-sm-10">
+                <input type="radio" name="choose" id="1" value="+" required>
+                <label for="1">add</label>
+            </div>
+            <div class="col-sm-10">
+                <input type="radio" name="choose" id="2" value="-" >
+                <label for="2">subtract</label>
+            </div>
+            <div class="col-sm-10">
+                <input type="radio" name="choose" id="3" value="*">
+                <label for="3">multiply</label>
+            </div>
+            <div class="col-sm-10">
+                <input type="radio" name="choose" id="4" value="/">
+                <label for="4">divide</label>
+            </div>
+        </div>
+        <div class="d-flex">
+            <button class="btn btn-success mt-1">Calculate</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
